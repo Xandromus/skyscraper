@@ -2,7 +2,7 @@ let request = require("request");
 let cheerio = require("cheerio");
 
 module.exports = function (app) {
-    app.get("/scrape", function (req, res) {
+    app.get("/api/scrape", function (req, res) {
         
         // Make a request call to grab the HTML body from the site of your choice
         request("https://news.sky.com/", function (error, response, html) {
@@ -16,8 +16,6 @@ module.exports = function (app) {
 
             // Select each element in the HTML body from which you want information.
             $(".sdc-news-story-grid__card").each(function (i, element) {
-                console.log(i);
-                console.log(typeof i);
                 var link;
                 var title;
                 if (i === 0) {

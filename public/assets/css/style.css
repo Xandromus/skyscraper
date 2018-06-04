@@ -75,6 +75,14 @@ header {
     font-size: 30px;
 }
 
+#btn-scraper {
+    background-color: #3F4B54!important;
+}
+
+#btn-scraper:hover {
+    background-color: rgba(63,75,84,0.8)!important;
+}
+
 /* MAIN */
 
 main {
@@ -92,6 +100,21 @@ main {
     width: 100%;
     height: 100%;
     margin: 0 auto;
+}
+
+/* CARDS */
+
+.card {
+    width: 18rem;
+    margin: 5px;
+}
+
+#articles {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
 }
 
 
@@ -131,6 +154,12 @@ footer p {
 
 
 /* MEDIA QUERIES */
+
+@media (min-width: 1200px) {
+.container {
+    max-width: 1600px;
+}
+}
 
 @media screen and (max-width: 991px) {
     .h2,
