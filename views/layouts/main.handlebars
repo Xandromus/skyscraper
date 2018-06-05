@@ -42,7 +42,8 @@
                             <a class="nav-link" href="#">Saved Articles</a>
                         </li>
                         <li class="nav-item float-right">
-                            <button class="nav-link btn btn-md btn-secondary" id="btn-scraper"><i class="fa fa-newspaper-o"></i> Scrape more articles</button>
+                            <button class="nav-link btn btn-md btn-secondary" id="btn-scraper">
+                                <i class="fa fa-newspaper-o"></i> Scrape more articles</button>
                         </li>
                     </ul>
                 </div>
@@ -50,92 +51,7 @@
         </header>
         {{{ body }}}
 
-        <!-- Notes Modal -->
-        <div id="notes-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
 
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header text-center">
-                        <h2 class="modal-title">
-                            <strong>Add a new suitcase</strong>
-                        </h2>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-                    <div class="modal-body ">
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="md-form mb-5">
-                                    <i class="fa fa-map-marker prefix" style="color:aqua"></i>
-                                    <input type="text" id="suitcase-city" class="form-control validate" required>
-                                    <label class="text-center" data-error="wrong" data-success="right" for="suitcase-city">City</label>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="md-form mb-5">
-                                    <i class="fa fa-plane prefix" style="color:green"></i>
-                                    <select class="custom-select" id="travelselect" required>
-                                        <option value="" disabled="disabled" selected></option>
-                                        <option value="business">Business</option>
-                                        <option value="leisure">Leisure</option>
-                                        <option value="adventure">Adventure</option>
-                                        <option value="vacation">Vacation</option>
-                                    </select>
-                                    <label data-error="wrong" data-success="right" for="travelselect">Travel Type</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="md-form mb-5">
-                                    <div class='input-group date' id='datetimepicker1'>
-                                        <span class="input-group-addon" id="pickOne">
-                                            <i class="fa fa-calendar mr-2" style="color:purple"></i>
-                                        </span>
-                                        <input type='text' id="start-date" class="form-control datepicker" required/>
-
-                                    </div>
-                                    <label data-error="wrong" data-success="right" for="start-date">Start Date</label>
-                                </div>
-                            </div>
-
-                            <div class="col-6">
-                                <div class="md-form mb-5">
-                                    <div class='input-group date' id='datetimepicker2'>
-                                        <span class="input-group-addon" id="pickTwo">
-                                            <i class="fa fa-calendar mr-2" style="color:purple"></i>
-                                        </span>
-                                        <input type='text' id="end-date" class="form-control datepicker" required/>
-                                    </div>
-                                    <label data-error="wrong" data-success="right" for="end-date">End Date</label>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary" id="new-suitcase-btn">Start Packing!</button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <footer>
-            <p>&copy;
-                <script type="text/javascript">
-                    document.write(new Date().getFullYear());
-                </script> Xander Rapstine</p>
-        </footer>
-
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <script src="assets/js/app.js"></script>
 </body>
 
 </html>
