@@ -109,7 +109,14 @@ main {
     margin: 5px;
 }
 
-#articles {
+/* .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+} */
+
+#articles, #saved-articles {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

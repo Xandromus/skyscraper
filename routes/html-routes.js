@@ -4,8 +4,12 @@ var db = require("./../models");
 // function to render html through handlebars
 module.exports = function (app) {
 
-    app.get("/*", (req, res) => {
+    app.get("/", (req, res) => {
         res.render("index");
+    });
+
+    app.get("/saved", (req, res) => {
+        res.render("saved");
     });
 
     // // default catch-all route to index, rendered through handlebars, and getting all Articles from the db
