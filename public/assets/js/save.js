@@ -12,8 +12,8 @@ $(document).ready(function () {
 
         //ajax to get all items in the current suitcase
         $.get("/api/articles", function (dbArticles) {
-
-            if (dbArticles) { // check for response
+            
+            if (dbArticles.length) { // check for response
 
                 // build the item inputs with checkmarks for each item that comes back and trashcans for deleting items
                 dbArticles.forEach(function (article) {
@@ -65,6 +65,8 @@ $(document).ready(function () {
                         $("#saved-articles").append(card);
                     }
                 });
+            } else {
+                $("#saved-articles").html("<p>No saved articles yet.</p>");
             }
         });
     };
@@ -79,7 +81,6 @@ $(document).ready(function () {
         //ajax to get all notes for the selected article
         $.get("/api/articles/" + articleId, function (dbArticle) {
             var notes = dbArticle.notes;
-            console.log(notes);
             if (notes.length) {
 
                 notes.forEach(function (note) {

@@ -107,9 +107,9 @@ module.exports = function (app) {
     // Route for deleting an Article's associated Note
     app.delete("/api/articles/:id", function (req, res) {
         // Create a new note and pass the req.body to the entry
-        db.Note.remove(req.body)
+        db.Note.remove({_id: req.body._id})
             .then(function (dbNote) {
-                return db.Article.findOneAndUpdate({ _id: req.params.id }, { $pull: { notes: dbNote._id }});
+                return db.Article.findOneAndUpdate({ _id: req.params.id }, { $pull: { notes: req.body._id }});
             })
             .then(function (dbArticle) {
                 // If we were able to successfully update an Article, send it back to the client
