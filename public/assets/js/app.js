@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    $("#home-link").addClass("active");
+
     function renderArticles() {
         // empty all rows
         $("#articles").empty();
@@ -7,7 +9,7 @@ $(document).ready(function () {
         //ajax to get all items in the current suitcase
         $.get("/api/articles", function (dbArticles) {
 
-            if (dbArticles) { // check for response
+            if (dbArticles.length) { // check for response
 
                 // build the item inputs with checkmarks for each item that comes back and trashcans for deleting items
                 dbArticles.forEach(function (article) {
@@ -43,6 +45,8 @@ $(document).ready(function () {
                         $("#articles").append(card);
                     }
                 });
+            } else {
+                $("#articles").html("<p>No scraped articles yet.</p>");
             }
         });
     };

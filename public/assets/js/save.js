@@ -2,6 +2,8 @@ $(document).ready(function () {
 
     $("#btn-scraper").hide();
 
+    $("#saved-link").addClass("active");
+
     ///////////////////////////////////////////
     // FUNCTION TO RENDER ALL SAVED ARTICLES //
     ///////////////////////////////////////////
@@ -11,8 +13,8 @@ $(document).ready(function () {
         $("#saved-articles").empty();
 
         //ajax to get all items in the current suitcase
-        $.get("/api/articles", function (dbArticles) {
-            
+        $.get("/api/articles/saved", function (dbArticles) {
+
             if (dbArticles.length) { // check for response
 
                 // build the item inputs with checkmarks for each item that comes back and trashcans for deleting items
@@ -149,15 +151,16 @@ $(document).ready(function () {
             })
                 // With that done
                 .then(function (data) {
-                    // Log the response
-                    console.log(data);
-                    // Empty the notes section
+                    // re-render the notes
                     renderNotes(articleId);
                 });
 
             // remove the values entered in the textarea for note entry
             $("#note-text").val("");
-        };
+            $(".message").empty();
+        } else {
+            $(".message").text("Please enter at least 1 character");
+        }
     });
 
     // click handler to delete note
@@ -176,14 +179,11 @@ $(document).ready(function () {
         })
             // With that done
             .then(function (data) {
-                // Log the response
-                console.log(data);
-                // Empty the notes section
+                $(".message").empty();
+                // re-render the notes
                 renderNotes(articleId);
             });
     });
-
-
 
     renderArticles();
 
