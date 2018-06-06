@@ -53,9 +53,8 @@ module.exports = function (app) {
 
             });
 
-
+            res.send("Scrape Complete");
         });
-        res.end();
     });
 
     // Route for getting all Articles from the db

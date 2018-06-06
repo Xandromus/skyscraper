@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    $("#btn-scraper").hide();
+
     function renderArticles() {
         // empty all rows
         $("#saved-articles").empty();
@@ -42,10 +44,12 @@ $(document).ready(function () {
                         colTwo.addClass("col-6 text-center");
 
                         var deleteBtn = $("<button>");
-                        deleteBtn.addClass("btn btn-primary delete").html("<i class='fa fa-trash'></i> Delete").data("article-id", article._id);
+                        deleteBtn.addClass("btn btn-primary delete").html("<i class='fa fa-trash'></i> Delete").attr("data-article-id", article._id);
 
                         var notesBtn = $("<button>");
-                        notesBtn.addClass("btn btn-primary notes").html("<i class='fa fa-pencil-square-o'></i> Notes").data("article-id", article._id);
+                        notesBtn.addClass("btn btn-primary notes").html("<i class='fa fa-pencil-square-o'></i> Notes").attr("data-article-id", article._id).attr("value", article.title);
+                        notesBtn.attr("data-toggle", "modal");
+                        notesBtn.attr("data-target", "#notes-modal");
 
                         cardTitle.append(titleLink);
                         colOne.append(deleteBtn);
@@ -75,6 +79,12 @@ $(document).ready(function () {
                 renderArticles();
             }
         );
+    });
+
+    $("#notes-modal").on("show.bs.modal", function (event) {
+        var articleId = $(event.relatedTarget).data("article-id");
+        var articleTitle = $(event.relatedTarget).attr("value");
+        $(this).find(".notes-title").html("Notes for:<br/>" + articleTitle);
     });
 
     renderArticles();

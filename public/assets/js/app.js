@@ -1,16 +1,5 @@
 $(document).ready(function () {
 
-    // click handler to add items to a suitcase
-    $("#btn-scraper").on("click", function (event) {
-        event.preventDefault();
-
-        // ajax to pass the ids array to the endpoint and add them for user's current suitcase
-        $.ajax({
-            url: "/api/scrape",
-            type: "GET"
-        })
-    });
-
     function renderArticles() {
         // empty all rows
         $("#articles").empty();
@@ -45,7 +34,7 @@ $(document).ready(function () {
                         cardText.text(article.summary);
 
                         var saveBtn = $("<button>");
-                        saveBtn.addClass("btn btn-primary save").html("<i class='fa fa-floppy-o'></i> Save article").data("article-id", article._id);
+                        saveBtn.addClass("btn btn-primary save").html("<i class='fa fa-floppy-o'></i> Save article").attr("data-article-id", article._id);
 
                         cardTitle.append(titleLink);
                         cardBody.append(cardTitle, cardText, saveBtn);
@@ -57,6 +46,21 @@ $(document).ready(function () {
             }
         });
     };
+
+     // click handler to add items to a suitcase
+     $("#btn-scraper").on("click", function (event) {
+        event.preventDefault();
+
+        // ajax to pass the ids array to the endpoint and add them for user's current suitcase
+        $.ajax({
+            url: "/api/scrape",
+            type: "GET"
+        }).then(
+            function () {
+                renderArticles();
+            }
+        );
+    });
 
     // click handler for changing status of article
     $("body").on("click", ".save", function (event) {
