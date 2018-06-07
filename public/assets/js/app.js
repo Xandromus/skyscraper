@@ -8,7 +8,7 @@ $(document).ready(function () {
 
         //ajax to get all items in the current suitcase
         $.get("/api/articles", function (dbArticles) {
-
+            console.log(dbArticles.length);
             if (dbArticles.length) { // check for response
 
                 // build the item inputs with checkmarks for each item that comes back and trashcans for deleting items
@@ -60,7 +60,8 @@ $(document).ready(function () {
             url: "/api/scrape",
             type: "GET"
         }).then(
-            function () {
+            function (counter) {
+                console.log(counter);
                 renderArticles();
             }
         );

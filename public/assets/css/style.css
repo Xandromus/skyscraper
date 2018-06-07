@@ -101,6 +101,17 @@ header {
     background-color: rgba(63,75,84,0.8)!important;
 }
 
+.tagline {
+    margin: 0!important;
+    text-transform: uppercase;
+}
+
+.sky {
+    font-family: 'skyfontthick', sans-serif;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+
 .active {
     cursor: default;
     background-color: #3F4B54!important;
@@ -130,14 +141,24 @@ main {
 .card {
     width: 18rem;
     margin: 5px;
+    display: flex;
 }
 
-/* .card-body {
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
+.card-body {
+    width: 100%;
+    height: 20vw;
+    object-fit: cover;
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    flex-flow: column nowrap;
+    justify-content: space-between;
     align-items: center;
-} */
+}
 
 #articles, #saved-articles {
     display: flex;
