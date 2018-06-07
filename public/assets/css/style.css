@@ -86,7 +86,7 @@ header {
 
 .fa-navicon {
     color: #EAEFFC!important;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 #btn-scraper {
@@ -147,12 +147,14 @@ main {
 .card-img-top {
     width: 100%;
     height: 15vw;
+    min-height: 120px;
     object-fit: cover;
 }
 
 .card-body {
     width: 100%;
     height: 20vw;
+    min-height: 280px;
     object-fit: cover;
     display: flex;
     flex-flow: column nowrap;
@@ -221,6 +223,29 @@ footer p {
     h2 {
         font-size: 1.4rem;
     }
+    .navbar {
+        padding-top: 10px!important;
+        padding-bottom: 10px!important;
+    }
+    .nav-item {
+        text-align: center;
+    }
+    .resp-nav:hover {
+        background-color: #3F4B54;
+    }
+    #btn-scraper {
+        margin: 0 auto;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .active {
+        background-color: initial!important;
+    }
+    .tagline {
+        text-align: center;
+        font-size: 12px;
+        margin-top: 15px!important;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -235,35 +260,18 @@ footer p {
     h2 {
         text-align: left!important;
     }
-    .logo-small {
-        max-height: 25px;
-    }
-    .questions h3 {
-        font-size: 1.5rem;
-    }
-    .questions h4 {
-        font-size: 1.3rem;
-    }
 }
 
 @media screen and (max-width: 385px) {
     body {
         font-size: 0.8rem;
     }
-    header {
-        height: 45px;
+    .navbar-brand,
+    .fa-navicon {
+        font-size: 14px;
     }
-    .fa-github {
-        display: inline;
-    }
-    .repo {
-        display: none;
-    }
-    .logo-small {
-        max-height: 20px;
-    }
-    .questions h4 {
-        font-size: 1.1rem;
+    .navbar-toggler {
+        padding: 1px 6px;
     }
     footer p {
         font-size: 1.2rem;
