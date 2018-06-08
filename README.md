@@ -15,9 +15,9 @@ New articles added subsequently to the SKY News website can be scraped and will 
 
 Each card has a save button which allows the user to move the article to the saved articles page, accessible via the navbar. From the saved articles page, the user has two options:
 
-    1. Delete the article from the saved articles page, thus moving it back to the home page.
+1. Delete the article from the saved articles page, thus moving it back to the home page.
 
-    2. Add notes to the article in the add notes dialog modal. These notes are persistent, and will remain associated with the article even if it is deleted from the saved articles page. The notes can also be deleted from the article at any time as long as the article has been moved to the saved articles page.
+2. Add notes to the article in the add notes dialog modal. These notes are persistent, and will remain associated with the article even if it is deleted from the saved articles page. The notes can also be deleted from the article at any time as long as the article has been moved to the saved articles page.
 
 
 ## Concepts Used
