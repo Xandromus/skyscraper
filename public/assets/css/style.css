@@ -2,13 +2,14 @@
     font-family: 'skyfontthick';
     src: url('/assets/fonts/skyfontthick-webfont.eot');
     src: url('/assets/fonts/skyfontthick-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/assets/fonts/skyfontthick-webfont.woff2') format('woff2'),
-         url('/assets/fonts/skyfontthick-webfont.woff') format('woff'),
-         url('/assets/fonts/skyfontthick-webfont.ttf') format('truetype'),
-         url('/assets/fonts/skyfontthick-webfont.svg#skyfontthickregular') format('svg');
+    url('/assets/fonts/skyfontthick-webfont.woff2') format('woff2'),
+    url('/assets/fonts/skyfontthick-webfont.woff') format('woff'),
+    url('/assets/fonts/skyfontthick-webfont.ttf') format('truetype'),
+    url('/assets/fonts/skyfontthick-webfont.svg#skyfontthickregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
+
 
 /* BASIC STYLES */
 
@@ -24,10 +25,6 @@ body {
     font-family: 'Josefin Sans', sans-serif;
 }
 
-/* a {
-    color: inherit;
-} */
-
 a:hover {
     text-decoration: none;
 }
@@ -35,6 +32,7 @@ a:hover {
 h2 {
     text-align: center;
 }
+
 
 /* WRAPPER */
 
@@ -47,7 +45,8 @@ h2 {
 }
 
 
-/* HEADER */
+
+/* HEADER AND NAVBAR */
 
 header {
     background-color: #439FD8;
@@ -100,7 +99,7 @@ header {
 }
 
 #btn-scraper:hover {
-    background-color: rgba(63,75,84,0.8)!important;
+    background-color: rgba(63, 75, 84, 0.8)!important;
 }
 
 .tagline {
@@ -119,6 +118,7 @@ header {
     background-color: #3F4B54!important;
 }
 
+
 /* MAIN */
 
 main {
@@ -126,6 +126,7 @@ main {
     position: relative;
     padding: 20px 0;
 }
+
 
 
 /* MIDDLE */
@@ -137,6 +138,7 @@ main {
     height: 100%;
     margin: 0 auto;
 }
+
 
 /* CARDS */
 
@@ -164,7 +166,8 @@ main {
     align-items: center;
 }
 
-#articles, #saved-articles {
+#articles,
+#saved-articles {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -173,9 +176,11 @@ main {
 }
 
 
+
 /* MODALS */
 
-#notes-modal {
+#notes-modal,
+#scrape-modal {
     padding-right: 0!important;
 }
 
@@ -183,6 +188,7 @@ main {
     width: 100%;
     max-width: 100%;
 }
+
 
 
 /* FOOTER */
@@ -212,12 +218,13 @@ footer p {
 }
 
 
+
 /* MEDIA QUERIES */
 
 @media (min-width: 1200px) {
-.container {
-    max-width: 1600px;
-}
+    .container {
+        max-width: 1600px;
+    }
 }
 
 @media screen and (max-width: 991px) {

@@ -42,6 +42,8 @@ mongoose.connect(MONGODB_URI);
 require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app);
 
+// starts the server to begin listening
+// =============================================================
 app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
 });

@@ -10,20 +10,23 @@ var ArticleSchema = new Schema({
         type: String,
         required: true
     },
-    // `link` is required and of type String
+    // `link` is required, must be unique, and of type String
     link: {
         type: String,
         unique: true,
         required: true
     },
+    // `imageLink` is required and of type String
     imageLink: {
         type: String,
         required: true
     },
+    // `summary` is required and of type String
     summary: {
         type: String,
         required: true
     },
+    // `notes` is an array of ObjectIds that reference the Note model. It's not required, as articles will not always have notes
     notes: [
         {
             // Store ObjectIds in the array
@@ -32,18 +35,9 @@ var ArticleSchema = new Schema({
             ref: "Note"
         }
     ],
+    // `saved` is a boolean flag to sort articles between the home page and the saved page
     saved: Boolean
 });
-
-// // Custom Instance Methods
-
-// // Custom method `setFullName`
-// ArticleSchema.methods.setSaved = function () {
-//     // Set the current user's `fullName` to their `firstName` and their `lastName` together
-//     this.saved === false ? this.saved = true : this.saved = false;
-//     // Return the new `fullName`
-//     return this.saved;
-// };
 
 // This creates our model from the above schema, using mongoose's model method
 var Article = mongoose.model("Article", ArticleSchema);
