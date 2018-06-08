@@ -87,12 +87,30 @@ $(document).ready(function () {
 
                 notes.forEach(function (note) {
 
+                    var colLeft = $("<div>");
+                    var colRight = $("<div>");
+                    colLeft.addClass("col-9");
+                    colRight.addClass("col-3");
+
+                    var par = $("<p>");
+                    par.text(note.body);
+
+                    colLeft.append(par);
+
                     var noteDeleteBtn = $("<button>");
                     noteDeleteBtn.addClass("btn btn-danger note-delete float-right").text("x").attr("data-note-id", note._id).attr("data-article-id", dbArticle._id);
-                    var listItem = $("<li>");
-                    listItem.addClass("list-group-item note").text(note.body);
 
-                    listItem.append(noteDeleteBtn);
+                    colRight.append(noteDeleteBtn);
+
+                    var row = $("<div>");
+                    row.addClass("row");
+
+                    row.append(colLeft, colRight);
+
+                    var listItem = $("<li>");
+                    listItem.addClass("list-group-item note");
+
+                    listItem.append(row);
                     $(".note-container").append(listItem);
 
                 });
