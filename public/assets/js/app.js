@@ -42,7 +42,7 @@ $(document).ready(function () {
                         cardBody.append(cardTitle, cardText, saveBtn);
                         card.append(cardImg, cardBody);
 
-                        $("#articles").append(card);
+                        $("#articles").prepend(card);
                     }
                 });
             } else {
@@ -62,6 +62,14 @@ $(document).ready(function () {
         }).then(
             function (counter) {
                 console.log(counter);
+                $("#scrape-modal").modal("show");
+                if (counter === 1) {
+                    $("#articles-scraped").text(counter + " new article scraped.");
+                } else if (counter > 1) {
+                    $("#articles-scraped").text(counter + " new articles scraped.");
+                } else {
+                    $("#articles-scraped").text("No new articles right now. Check back soon!");
+                }
                 renderArticles();
             }
         );

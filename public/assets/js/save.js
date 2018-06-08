@@ -46,8 +46,8 @@ $(document).ready(function () {
 
                         var colOne = $("<div>");
                         var colTwo = $("<div>");
-                        colOne.addClass("col-6 text-center");
-                        colTwo.addClass("col-6 text-center");
+                        colOne.addClass("col-6 text-center btn-col");
+                        colTwo.addClass("col-6 text-center btn-col");
 
                         var deleteBtn = $("<button>");
                         deleteBtn.addClass("btn btn-primary delete").html("<i class='fa fa-trash'></i> Delete").attr("data-article-id", article._id);

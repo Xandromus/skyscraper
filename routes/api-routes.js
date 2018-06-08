@@ -50,33 +50,44 @@ module.exports = function (app) {
                     saved: saved
                 }
 
-                results.push(newArticle);
+                if (i < 10) {
+                    results.unshift(newArticle);
+                } else {
+                    return;
+                };
 
             });
 
             results.forEach(function (result) {
                 console.log(result.link);
-            } );
+            });
             let counter = 0;
+            let errCount = 0;
+            let total = 0;
             // Create a new Article using the `result` object built from scraping
-            results.forEach(function (article, idx) {
+            results.forEach(function (article) {
                 db.Article.create(article)
                     .then(function (article) {
-                        counter++;
-                        console.log(idx, results.length-1);
 
-                        if (idx === results.length -1) {
+                        counter++;
+                        total = counter + errCount;
+
+
+                        if (total === results.length) {
                             res.json(counter);
                         }
 
                     })
                     .catch(function (err) {
+                        if (err.code === 11000) {
+                            errCount++;
+                        }
+                        total = counter + errCount;
 
-                        if (idx === results.length -1) {
+                        if (total === results.length) {
                             res.json(counter);
                         }
-                        console.log(idx, results.length-1);
-                        // console.log(err);
+
                     });
             });
 
